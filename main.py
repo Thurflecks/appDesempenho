@@ -4,6 +4,7 @@ from tkinter import font
 import pyautogui
 import os
 import time
+from tkinter import messagebox
 
 root = Tk()
 root.geometry("400x400")
@@ -42,6 +43,8 @@ def limpeza():
     time.sleep(5)
     pyautogui.press("enter")
     pyautogui.hotkey("alt", "f4")
+    messagebox.showinfo("Aviso:", "Finalizado!")
+
     
 def desativar():
     pyautogui.PAUSE = 2
@@ -54,7 +57,7 @@ def desativar():
     time.sleep(6)
     pyautogui.press("enter")
     pyautogui.hotkey("alt", "f4")
-      
+    messagebox.showinfo("Aviso:", "Finalizado!")
 
 
 
