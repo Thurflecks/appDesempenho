@@ -18,10 +18,12 @@ mensagem = "Se deseja limpar seu pc de arquivos inuteis \n e melhorar o desempen
 aviso = "Aviso:\n Quando clicar no botão,\n por favor não mexa no computador,\n até procedimento acabar"
 credito = "by thurflecks \n version 1.0"
 
-temp = "temp"
-temp2 = "%temp%"
-sys = "prefetch"
 
+with open('temp.bat', 'r') as arquivo:
+    conteudo = arquivo.read()
+
+cmd = "cmd"
+ 
 def ola():
     nome_usuario = os.getlogin()
     bemVindo.configure(text= f"Olá, {nome_usuario} seja Bem Vindo!")
@@ -30,11 +32,13 @@ def limpeza():
     pyautogui.PAUSE = 2
     time.sleep(2)
     pyautogui.hotkey("win", "r")
-    pyautogui.write(sys)
+    pyautogui.write(cmd)
     pyautogui.press("enter")
-    pyautogui.hotkey("ctrl", "a")
-    pyautogui.press("del")
-    pyautogui.press('enter')
+    pyautogui.write(conteudo)
+    pyautogui.press("enter")
+    time.sleep(5)
+    pyautogui.press("enter")
+    pyautogui.hotkey("alt", "f4")
     
     
 
